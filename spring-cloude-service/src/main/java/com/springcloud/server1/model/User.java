@@ -1,9 +1,14 @@
 package com.springcloud.server1.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 public class User implements Serializable {
+
     private Long id;
+    @NotNull
+    @Size(min = 1, max = 100)
     private String name;
     private Integer age;
     private String Sex;

@@ -22,4 +22,9 @@ public class UserServiceImpl implements UserService {
         AuRule auRule=auRuleDao.select(1L);
         return user;
     }
+
+    @Override
+    public int update(User user) {
+        return 0;
+    }
 }
