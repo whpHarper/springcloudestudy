@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springcloud.server1.dao.AuRuleDao">
+
+	<resultMap id="auRuleResult" type="com.springcloud.server1.model.AuRule">
+		<result column="id" property="id"/>
+		<result column="rule_name" property="ruleName"/>
+		<result column="description" property="description"/>
+		<result column="alert_type" property="alertType"/>
+		<result column="event_type_id" property="eventTypeId"/>
+		<result column="rule_definition" property="ruleDefinition"/>
+		<result column="alert_level" property="alertLevel"/>
+		<result column="is_eable" property="isEable"/>
+		<result column="is_delete" property="isDelete"/>
+		<result column="create_time" property="createTime"/>
+		<result column="update_time" property="updateTime"/>
+		<result column="created_by" property="createdBy"/>
+		<result column="updated_by" property="updatedBy"/>
+		<result column="plugin_type" property="pluginType"/>
+		<result column="remark" property="remark"/>
+		<result column="rule_parameter" property="ruleParameter"/>
+	</resultMap>
+
+	<select id="select" parameterType="java.lang.Long" resultMap="auRuleResult">
+		SELECT
+			id,
+			rule_name,
+			description,
+			alert_type,
+			event_type_id,
+			rule_definition,
+			alert_level,
+			is_eable,
+			is_delete,
+			create_time,
+			update_time,
+			created_by,
+			updated_by,
+			plugin_type,
+			remark,
+			rule_parameter
+		FROM
+			au_rule
+		WHERE
+			id = #{id}
+	</select>
+
+</mapper>
